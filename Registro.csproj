@@ -6,4 +6,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="UI\Consultas\" />
+    <Folder Include="UI\Reportes\" />
+    <Folder Include="UI\Registros\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="3.1.1" />
+  </ItemGroup>
+
 </Project>
