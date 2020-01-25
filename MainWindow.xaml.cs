@@ -75,6 +75,32 @@ namespace Registro {
 
         private void btnBuscar_Click(object sender , RoutedEventArgs e) {
 
+            int id = 0;
+            Persona persona = new Persona();
+
+            try {
+
+                id = Convert.ToInt32(tbID.Text);
+
+            } catch (Exception) {
+
+                MessageBox.Show("El ID debe ser un numero");
+                tbID.Focus();
+                
+            }
+
+            Limpiar();
+
+            persona = PersonasBLL.Buscar(id);
+
+            if(persona != null) {
+
+                LlenaCamposInterfaz(persona);
+                MessageBox.Show("Encontrada!");
+            } else {
+                MessageBox.Show("No encontrada");
+            }
+
         }
 
         private void Limpiar() {
