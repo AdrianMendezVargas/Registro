@@ -18,7 +18,7 @@ namespace Registro.BLL {
 			try {
 
 				if(db.Add(persona) != null) {
-					guardado = db.SaveChanges() > 0;
+					guardado = (db.SaveChanges() > 0);
 				}
 
 			} catch (Exception) {

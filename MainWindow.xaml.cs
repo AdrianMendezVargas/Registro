@@ -71,6 +71,31 @@ namespace Registro {
 
         private void btnEliminar_Click(object sender , RoutedEventArgs e) {
 
+            int id = 0;
+            Persona persona = new Persona();
+
+            try {
+
+                id = Convert.ToInt32(tbID.Text);
+
+            } catch (Exception) {
+
+                MessageBox.Show("El ID debe ser un numero");
+                tbID.Focus();
+                return;
+
+            }
+
+            persona = PersonasBLL.Buscar(id);
+
+            if (persona != null) {
+                PersonasBLL.Eliminar(id);
+                MessageBox.Show("Persona Eliminada");
+            } else {
+                MessageBox.Show("Esta Persona no existe");
+            }
+
+
         }
 
         private void btnBuscar_Click(object sender , RoutedEventArgs e) {
