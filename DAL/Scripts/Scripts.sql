@@ -9,7 +9,18 @@ create table Personas
 	Telefono varchar(15),
 	Cedula varchar(15),
 	Direccion varchar(max),
+	Balance decimal,
 	FechaNacimiento dateTime
 
+);
+
+Create Table Inscripciones
+(
+	InscripcionId int primary key identity,
+	PersonaId int,
+	Fecha dateTime,
+	Comentario varchar(50),
+	Monto decimal,
+	Balance decimal
 
 );

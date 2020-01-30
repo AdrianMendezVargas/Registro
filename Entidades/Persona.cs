@@ -12,6 +12,7 @@ namespace Registro.Entidades {
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string Direccion { get; set; }
+        public decimal Balance { get; }
         public DateTime FechaNacimiento { get; set; }
 
         public Persona() {
@@ -21,6 +22,7 @@ namespace Registro.Entidades {
             Telefono = string.Empty;
             Cedula = string.Empty;
             Direccion = string.Empty;
+            Balance = 0.0m;
             FechaNacimiento = DateTime.Now;
 
         }

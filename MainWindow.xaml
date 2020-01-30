@@ -5,48 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Registro"
         mc:Ignorable="d"
-        Title="Registro" Height="450" Width="399" Background="#FF2D2D30" Foreground="{x:Null}" ResizeMode="CanMinimize" SizeToContent="Manual" Cursor="Arrow" RenderTransformOrigin="0.5,0.5" Top="150" Left="500">
+        Title="Registro" Height="450" Width="500" Background="#FF2D2D30">
+    
+    
     <Grid>
-        <Label x:Name="lbID" Content="ID" HorizontalAlignment="Left" Margin="89,78,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="32,141,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="White"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="30,172,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="lbTelefono" Content="Cedula" HorizontalAlignment="Left" Margin="30,203,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="lbDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="30,234,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="lbFechaNacimiento" Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="32,265,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <MenuItem Header="_Archivo"></MenuItem>
+                <MenuItem Header="_Registro">
+                    <MenuItem x:Name="PersonasMenuItem" Header="_Personas" Click="PersonasMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Consulta">
+                    <MenuItem Header="_Personas"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
 
-        <Button x:Name="btnNuevo" Click="btnNuevo_Click" HorizontalAlignment="Left" Margin="50,340,0,0" VerticalAlignment="Top" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Source="nuevo1.png" Stretch="Fill"/>
-        </Button>
 
-        <Button x:Name="btnGuardar" Click="btnGuardar_Click" HorizontalAlignment="Left" Margin="163,337,0,0" VerticalAlignment="Top" Width="65" Height="50" BorderBrush="{x:Null}" Background="{x:Null}">
-            <Image Source="guardar1.png" Stretch="Fill"/>
-        </Button>
-
-        <Button x:Name="btnEliminar" Click="btnEliminar_Click" Margin="277,340,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="50" Background="{x:Null}" HorizontalAlignment="Left" Width="65">
-            <Image Source="eliminar1.png" Stretch="Fill"/>
-        </Button>
-
-        <TextBox x:Name="tbID" HorizontalAlignment="Left" Margin="140,85,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" CaretBrush="#FF00C888" Background="#FFB0ADAD" BorderBrush="Black" FontWeight="Normal" FontFamily="Britannic Bold" FontSize="14" InputScope="Number"/>
-
-        <Button x:Name="btnBuscar" Click="btnBuscar_Click" HorizontalAlignment="Left" Margin="278,69,0,0" VerticalAlignment="Top" Width="64" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Source="buscar1.png" Stretch="Fill"/>
-        </Button>
-
-        <Image x:Name="imgID" HorizontalAlignment="Left" Height="40" Margin="41,76,0,0" VerticalAlignment="Top" Width="50" Source="idCard.png"/>
-
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="222,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" FontSize="14"/>
-        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="222,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" FontSize="14" InputScope="TelephoneNumber"/>
-        <TextBox x:Name="tbCedula" HorizontalAlignment="Left" Margin="222,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF060606" FontFamily="Britannic Bold" FontSize="14"/>
-        <TextBox x:Name="tbDireccion" HorizontalAlignment="Left" Margin="222,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" FontSize="14"/>
-        <DatePicker x:Name="dpFechaNacimiento" HorizontalAlignment="Left" Margin="222,272,0,0" VerticalAlignment="Top" Width="120">
-            <DatePicker.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
-                    <GradientStop Color="#FF9FABB8"/>
-                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
-                    <GradientStop Color="#FF55A472" Offset="0.375"/>
-                    <GradientStop Color="#FF0DFD4E" Offset="1"/>
-                </LinearGradientBrush>
-            </DatePicker.BorderBrush>
-        </DatePicker>
     </Grid>
+    
+
+   
 </Window>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="Registro.UI.Registros.RegistroPersonas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Registro.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro de Personas" Height="450" Width="399" Background="#FF2D2D30" Foreground="{x:Null}" ResizeMode="CanMinimize" SizeToContent="Manual" Cursor="Arrow" RenderTransformOrigin="0.5,0.5" Top="150" Left="500">
+    <Grid>
+
+        <Label x:Name="lbID" Content="ID" HorizontalAlignment="Left" Margin="90,54,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="33,117,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="White"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="31,148,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lbTelefono" Content="Cedula" HorizontalAlignment="Left" Margin="31,179,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lbDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="31,210,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lbFechaNacimiento" Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="31,272,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+
+        <Button x:Name="btnNuevo" Click="btnNuevo_Click" HorizontalAlignment="Left" Margin="52,337,0,0" VerticalAlignment="Top" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="/Registro;component/nuevo1.png" Stretch="Fill"/>
+        </Button>
+
+        <Button x:Name="btnGuardar" Click="btnGuardar_Click" HorizontalAlignment="Left" Margin="165,334,0,0" VerticalAlignment="Top" Width="65" Height="50" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Image Source="/Registro;component/guardar1.png" Stretch="Fill"/>
+        </Button>
+
+        <Button x:Name="btnEliminar" Click="btnEliminar_Click" Margin="279,337,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="50" Background="{x:Null}" HorizontalAlignment="Left" Width="65">
+            <Image Source="/Registro;component/eliminar1.png" Stretch="Fill"/>
+        </Button>
+
+        <TextBox x:Name="tbID" HorizontalAlignment="Left" Margin="141,61,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" CaretBrush="#FF00C888" Background="#FFB0ADAD" BorderBrush="Black" FontWeight="Normal" FontFamily="Britannic Bold" FontSize="14" InputScope="Number"/>
+
+        <Button x:Name="btnBuscar" Click="btnBuscar_Click" HorizontalAlignment="Left" Margin="279,45,0,0" VerticalAlignment="Top" Width="64" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="/Registro;component/buscar1.png" Stretch="Fill"/>
+        </Button>
+
+        <Image x:Name="imgID" HorizontalAlignment="Left" Height="40" Margin="42,52,0,0" VerticalAlignment="Top" Width="50" Source="/Registro;component/idCard.png"/>
+
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="223,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" FontSize="14"/>
+        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="223,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" FontSize="14" InputScope="TelephoneNumber"/>
+        <TextBox x:Name="tbCedula" HorizontalAlignment="Left" Margin="223,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF060606" FontFamily="Britannic Bold" FontSize="14"/>
+        <TextBox x:Name="tbDireccion" HorizontalAlignment="Left" Margin="223,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" FontSize="14"/>
+        <DatePicker x:Name="dpFechaNacimiento" HorizontalAlignment="Left" Margin="223,276,0,0" VerticalAlignment="Top" Width="120">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FF9FABB8"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF55A472" Offset="0.375"/>
+                    <GradientStop Color="#FF0DFD4E" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <Label Content="Balance" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="tbBalance" HorizontalAlignment="Left" Margin="223,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" FontSize="14"/>
+
+    </Grid>
+</Window>
