@@ -1,5 +1,6 @@
 ﻿using Registro.BLL;
 using Registro.Entidades;
+using Registro.UI.Consultas;
 using Registro.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -25,12 +26,18 @@ namespace Registro {
             InitializeComponent();
         }
 
-        private void PersonasMenuItem_Click(object sender , RoutedEventArgs e) {
+        private void RegistroPersonasMenuItem_Click(object sender , RoutedEventArgs e) {
 
             RegistroPersonas registroPersonas = new RegistroPersonas();
             registroPersonas.Owner = this;
             registroPersonas.ShowDialog();
 
+        }
+
+        private void ConsultaPersonasMenuItem_Click(object sender , RoutedEventArgs e) {
+            ConsultaPersonas consultaPersonas = new ConsultaPersonas();
+            consultaPersonas.Owner = this;
+            consultaPersonas.ShowDialog();
         }
     }
 }

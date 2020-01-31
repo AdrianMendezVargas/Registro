@@ -13,10 +13,10 @@
             <Menu DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Top">
                 <MenuItem Header="_Archivo"></MenuItem>
                 <MenuItem Header="_Registro">
-                    <MenuItem x:Name="PersonasMenuItem" Header="_Personas" Click="PersonasMenuItem_Click"/>
+                    <MenuItem x:Name="PersonasMenuItem" Header="_Personas" Click="RegistroPersonasMenuItem_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Consulta">
-                    <MenuItem Header="_Personas"/>
+                    <MenuItem x:Name="ConsultaPersonasMenuItem" Header="_Personas" Click="ConsultaPersonasMenuItem_Click"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

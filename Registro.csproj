@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
 
