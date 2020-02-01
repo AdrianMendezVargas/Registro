@@ -15,6 +15,7 @@
                 <MenuItem Header="_Registro">
                     <MenuItem x:Name="RegistroPersonasMenuItem" Header="_Personas" Click="RegistroPersonasMenuItem_Click"/>
                     <MenuItem x:Name="RegistroInscripcionMenuItem" Header="_Inscripción" Click="RegistroInscripcionMenuItem_Click"/>
+                    <MenuItem x:Name="ReistroPagoMenuItem" Header="_Pago" Click="ReistroPagoMenuItem_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Consulta">
                     <MenuItem x:Name="ConsultaPersonasMenuItem" Header="_Personas" Click="ConsultaPersonasMenuItem_Click"/>

@@ -55,5 +55,13 @@ namespace Registro {
             consultaInscripciones.ShowDialog();
 
         }
+
+        private void ReistroPagoMenuItem_Click(object sender , RoutedEventArgs e) {
+
+            RegistroPago registroPago = new RegistroPago();
+            registroPago.Owner = this;
+            registroPago.ShowDialog();
+
+        }
     }
 }
