@@ -66,6 +66,13 @@ namespace Registro.UI.Consultas {
             } else {
 
                 listado = PersonasBLL.GetList(p => true);
+
+                if (!string.IsNullOrWhiteSpace(DesdeDatePicker.SelectedDate.ToString()) && !string.IsNullOrWhiteSpace(HastaDatePicker.SelectedDate.ToString())) {
+
+                    listado = listado.Where(p => p.FechaNacimiento >= DesdeDatePicker.SelectedDate && p.FechaNacimiento <= HastaDatePicker.SelectedDate).ToList();
+                }
+
+                
             }
 
             ResultadosDataGrid.ItemsSource = listado;

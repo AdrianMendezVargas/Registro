@@ -32,13 +32,13 @@ namespace Registro.UI.Registros {
             Persona persona;
             bool guardado = true;
 
-            if (!CamposValidos()) {
+            if (!Validar()) {
                 return;
             }
 
-            persona = LlenaClasePersona();
+            persona = LlenaClase();
 
-            if (tbID.Text == "0") {
+            if (tbID.Text == "0" || string.IsNullOrWhiteSpace(tbID.Text)) {
 
                 guardado = PersonasBLL.Guardar(persona);
 
@@ -117,7 +117,7 @@ namespace Registro.UI.Registros {
 
             if (persona != null) {
 
-                LlenaCamposInterfaz(persona);
+                LlenaCampos(persona);
                 MessageBox.Show("Encontrada!");
             } else {
                 MessageBox.Show("No encontrada");
@@ -132,11 +132,12 @@ namespace Registro.UI.Registros {
             tbTelefono.Text = "";
             tbCedula.Text = "";
             tbDireccion.Text = "";
+            tbBalance.Text = "";
             dpFechaNacimiento.SelectedDate = DateTime.Parse("01/01/1999");
 
         }
 
-        private Persona LlenaClasePersona() {
+        private Persona LlenaClase() {
 
             Persona persona = new Persona();
 
@@ -150,18 +151,19 @@ namespace Registro.UI.Registros {
             return persona;
         }
 
-        private void LlenaCamposInterfaz(Persona persona) {
+        private void LlenaCampos(Persona persona) {
 
             tbID.Text = persona.PersonaID.ToString();
             tbNombre.Text = persona.Nombre;
             tbCedula.Text = persona.Cedula;
             tbTelefono.Text = persona.Telefono;
             tbDireccion.Text = persona.Direccion;
+            //ToDo: Verificar campo Balance 
             dpFechaNacimiento.SelectedDate = persona.FechaNacimiento;
 
         }
 
-        private bool CamposValidos() {
+        private bool Validar() {
 
             bool validados = true;
 
@@ -173,7 +175,7 @@ namespace Registro.UI.Registros {
 
             } catch (Exception) {
 
-                MessageBox.Show("El ID debe ser un numero");
+                MessageBox.Show("El ID debe ser un numero. \nIngrese el numero \"0\" para crear una persona nueva");
                 tbID.Focus();
                 validados = false;
 

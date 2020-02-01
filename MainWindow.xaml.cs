@@ -39,5 +39,13 @@ namespace Registro {
             consultaPersonas.Owner = this;
             consultaPersonas.ShowDialog();
         }
+
+        private void RegistroInscripcionMenuItem_Click(object sender , RoutedEventArgs e) {
+
+            RegistroInscripcion registroInscripcion = new RegistroInscripcion();
+            registroInscripcion.Owner = this;
+            registroInscripcion.ShowDialog();
+
+        }
     }
 }

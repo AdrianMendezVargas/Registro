@@ -8,6 +8,7 @@ namespace Registro.DAL {
     public class Contexto : DbContext {
 
         public DbSet<Persona> Personas { get; set; }
+        public DbSet<Inscripcion> Inscripciones { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 

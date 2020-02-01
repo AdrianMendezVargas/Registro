@@ -27,7 +27,7 @@
             <Image Source="/Registro;component/eliminar1.png" Stretch="Fill"/>
         </Button>
 
-        <TextBox x:Name="tbID" HorizontalAlignment="Left" Margin="141,61,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" CaretBrush="#FF00C888" Background="#FFB0ADAD" BorderBrush="Black" FontWeight="Normal" FontFamily="Britannic Bold" FontSize="14" InputScope="Number"/>
+        <TextBox x:Name="tbID" HorizontalAlignment="Left" Margin="141,61,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" CaretBrush="#FF00C888" Background="#FFB0ADAD" BorderBrush="Black" FontWeight="Normal" FontFamily="Britannic Bold" FontSize="14" InputScope="Number" TextAlignment="Center" Height="17.5"/>
 
         <Button x:Name="btnBuscar" Click="btnBuscar_Click" HorizontalAlignment="Left" Margin="279,45,0,0" VerticalAlignment="Top" Width="64" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">
             <Image Source="/Registro;component/buscar1.png" Stretch="Fill"/>
@@ -35,10 +35,10 @@
 
         <Image x:Name="imgID" HorizontalAlignment="Left" Height="40" Margin="42,52,0,0" VerticalAlignment="Top" Width="50" Source="/Registro;component/idCard.png"/>
 
-        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="223,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" FontSize="14"/>
-        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="223,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" FontSize="14" InputScope="TelephoneNumber"/>
-        <TextBox x:Name="tbCedula" HorizontalAlignment="Left" Margin="223,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF060606" FontFamily="Britannic Bold" FontSize="14"/>
-        <TextBox x:Name="tbDireccion" HorizontalAlignment="Left" Margin="223,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" FontSize="14"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Margin="223,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" Height="17.5" FontSize="14"/>
+        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="223,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="Black" FontFamily="Britannic Bold" Height="17.5" FontSize="14" InputScope="TelephoneNumber"/>
+        <TextBox x:Name="tbCedula" HorizontalAlignment="Left" Margin="223,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF060606" FontFamily="Britannic Bold" Height="17.5" FontSize="14"/>
+        <TextBox x:Name="tbDireccion" HorizontalAlignment="Left" Margin="223,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" Height="17.5" FontSize="14"/>
         <DatePicker x:Name="dpFechaNacimiento" HorizontalAlignment="Left" Margin="223,276,0,0" VerticalAlignment="Top" Width="120">
             <DatePicker.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
@@ -50,7 +50,7 @@
             </DatePicker.BorderBrush>
         </DatePicker>
         <Label Content="Balance" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <TextBox x:Name="tbBalance" HorizontalAlignment="Left" Margin="223,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" FontSize="14"/>
+        <TextBox x:Name="tbBalance" IsEnabled="False" Focusable="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="223,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" CaretBrush="#FF009688" Background="#FFB0ADAD" BorderBrush="#FF020202" FontFamily="Britannic Bold" Height="17.5" FontSize="14"/>
 
     </Grid>
 </Window>
