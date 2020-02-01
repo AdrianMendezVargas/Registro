@@ -68,9 +68,59 @@ namespace Registro.UI.Registros {
 
         private void btnEliminar_Click(object sender , RoutedEventArgs e) {
 
+            int InscripcionId;
+            Inscripcion inscripcion;
+
+            try {
+
+                InscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
+
+            } catch (Exception) {
+
+                MessageBox.Show("El campo \"Inscripcion Id\" debe ser un numero entero ");
+                InscripcionIdTextBox.Focus();
+                return;
+            }
+
+            inscripcion = InscripcionesBLL.Buscar(InscripcionId);
+
+            if (inscripcion != null) {
+                InscripcionesBLL.Eliminar(InscripcionId);
+                MessageBox.Show("Inscripción eliminada.");
+            } else {
+                MessageBox.Show("Esta inscripción no existe");
+            }
+
         }
 
         private void btnBuscar_Click(object sender , RoutedEventArgs e) {
+
+            int InscripcionId;
+            
+            Inscripcion inscripcion;
+
+            try {
+
+                InscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
+               
+
+            } catch (Exception) {
+
+                MessageBox.Show("El campo \"Inscripcion Id\" debe un ser numero entero.");
+                InscripcionIdTextBox.Focus();
+                return;
+            }
+
+            Limpiar();
+
+            inscripcion = InscripcionesBLL.Buscar(InscripcionId);
+
+            if (inscripcion != null) {
+                LlenaCampo(inscripcion);
+                MessageBox.Show("Inscripción encontrada.");
+            } else {
+                MessageBox.Show("Inscripción no encontrada.");
+            }
 
         }
 
@@ -89,11 +139,15 @@ namespace Registro.UI.Registros {
 
             bool validados = true;
 
-            int id;
+            Persona persona;
+
+            int InscripcionId;
+            int PersonaId;
+
             decimal monto;
 
             try {   //InscripcionId
-                id = Convert.ToInt32(InscripcionIdTextBox.Text);
+                InscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
 
             } catch (Exception) {
 
@@ -103,10 +157,17 @@ namespace Registro.UI.Registros {
             }
 
             try {    //PersonaId
-                id = Convert.ToInt32(PersonaIdTextBox.Text);
+                
+                PersonaId = Convert.ToInt32(PersonaIdTextBox.Text);
 
-                if (id <= 0) {
+                if (PersonaId <= 0) {
                     MessageBox.Show("El Campo \"PersonaId\" debe ser un numero entero > 0");
+                    PersonaIdTextBox.Focus();
+                    validados = false;
+                }
+
+                if ((persona = PersonasBLL.Buscar(PersonaId)) == null) {
+                    MessageBox.Show("Esta Persona no existe.\nIntroduzca otra Persona Id.");
                     PersonaIdTextBox.Focus();
                     validados = false;
                 }
@@ -134,7 +195,7 @@ namespace Registro.UI.Registros {
                 validados = false;
             }
 
-            //
+            //Fecha
             if (string.IsNullOrWhiteSpace(FechaInscripcionDatepicker.Text)) {
                 MessageBox.Show("Por favor seleccione una fecha");
                 FechaInscripcionDatepicker.Focus();
@@ -161,6 +222,17 @@ namespace Registro.UI.Registros {
         private bool ExisteEnBaseDatos() {
             Inscripcion inscripcion = InscripcionesBLL.Buscar(Convert.ToInt32(InscripcionIdTextBox.Text));
             return (inscripcion != null);
+        }
+
+        private void LlenaCampo(Inscripcion inscripcion) {
+
+            InscripcionIdTextBox.Text = inscripcion.InscripcionId.ToString();
+            PersonaIdTextBox.Text = inscripcion.PersonaId.ToString();
+            MontoTextBox.Text = inscripcion.Monto.ToString();
+            BalanceTextBox.Text = inscripcion.Balance.ToString();
+            FechaInscripcionDatepicker.SelectedDate = inscripcion.Fecha.Date;
+            ComentarioTextBox.Text = inscripcion.Comentario;
+
         }
 
     }
