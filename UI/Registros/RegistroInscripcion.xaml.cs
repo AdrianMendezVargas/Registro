@@ -33,7 +33,12 @@ namespace Registro.UI.Registros {
             }
 
             Inscripcion inscripcion;
+
             bool guardado = false;
+
+            int personaId;
+
+            int.TryParse(PersonaIdTextBox.Text , out personaId); 
 
             inscripcion = LlenaClase();
 
@@ -56,6 +61,24 @@ namespace Registro.UI.Registros {
             }
 
             if (guardado) {
+
+                Persona persona = PersonasBLL.Buscar(personaId);
+
+                decimal balance = 0;
+
+                List<Inscripcion> inscripcionesList = new List<Inscripcion>();
+
+                inscripcionesList = InscripcionesBLL.GetList(i => i.PersonaId == personaId);
+
+                foreach (Inscripcion i in inscripcionesList) {
+                    balance += i.Balance;
+                }
+
+                persona.Balance = balance;
+
+                bool personaModificada = PersonasBLL.Modificar(persona);
+     
+
                 MessageBox.Show("Guardado :)" , "EXITO" , MessageBoxButton.OK , MessageBoxImage.Exclamation);
             } else {
                 MessageBox.Show("No se ah Guardado :(" , "ERROR" , MessageBoxButton.OK , MessageBoxImage.Error);
@@ -139,7 +162,7 @@ namespace Registro.UI.Registros {
 
             bool validados = true;
 
-            Persona persona;
+            Persona persona = new Persona();
 
             int InscripcionId;
             int PersonaId;
@@ -147,6 +170,7 @@ namespace Registro.UI.Registros {
             decimal monto;
 
             try {   //InscripcionId
+
                 InscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
 
             } catch (Exception) {
@@ -166,7 +190,9 @@ namespace Registro.UI.Registros {
                     validados = false;
                 }
 
-                if ((persona = PersonasBLL.Buscar(PersonaId)) == null) {
+                persona = PersonasBLL.Buscar(PersonaId);
+
+                if (persona == null) {
                     MessageBox.Show("Esta Persona no existe.\nIntroduzca otra Persona Id.");
                     PersonaIdTextBox.Focus();
                     validados = false;

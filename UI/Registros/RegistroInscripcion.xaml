@@ -22,7 +22,7 @@
             <Image Source="/Registro;component/guardar1.png" Stretch="Fill"/>
         </Button>
 
-        <Button x:Name="btnEliminar" Click="btnEliminar_Click" Margin="281,388,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="50" Background="{x:Null}" HorizontalAlignment="Left" Width="65">
+        <Button x:Name="btnEliminar" Click="btnEliminar_Click" Margin="270,385,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="50" Background="{x:Null}" HorizontalAlignment="Left" Width="65">
             <Image Source="/Registro;component/eliminar1.png" Stretch="Fill"/>
         </Button>
 

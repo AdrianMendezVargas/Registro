@@ -159,8 +159,15 @@ namespace Registro.UI.Registros {
             tbTelefono.Text = persona.Telefono;
             tbDireccion.Text = persona.Direccion;
             //ToDo: Verificar campo Balance 
+            tbBalance.Text = persona.Balance.ToString();
             dpFechaNacimiento.SelectedDate = persona.FechaNacimiento;
 
+        }
+        private decimal CalcularBalancePersona(int id) {
+            decimal balance = 0.0m;
+
+
+            return balance;
         }
 
         private bool Validar() {

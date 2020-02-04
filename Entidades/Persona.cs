@@ -12,7 +12,7 @@ namespace Registro.Entidades {
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string Direccion { get; set; }
-        public decimal Balance { get; }
+        public decimal Balance { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
         public Persona() {
