@@ -108,14 +108,14 @@ namespace Registro.BLL {
 
 		}
 
-		public static List<Persona> GetList(Expression<Func<Persona, bool>> persona) {
+		public static List<Persona> GetList(Expression<Func<Persona, bool>> personaExpression) {
 
 			List<Persona> personasList = new List<Persona>();
 			Contexto db = new Contexto();
 
 			try {
 
-				personasList = db.Personas.Where(persona).ToList();
+				personasList = db.Personas.Where(personaExpression).ToList();
 
 			} catch (Exception) {
 
