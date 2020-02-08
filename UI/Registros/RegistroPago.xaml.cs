@@ -80,7 +80,7 @@ namespace Registro.UI.Registros {
                 validados = false;
             }
 
-            //verificando si la inscripcion existe
+            //verificando si la inscripción existe
             inscripcion = InscripcionesBLL.Buscar(inscripcionId);
 
             if(inscripcion == null) {

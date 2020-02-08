@@ -100,7 +100,7 @@ namespace Registro.UI.Registros {
 
             } catch (Exception) {
 
-                MessageBox.Show("El campo \"Inscripcion Id\" debe ser un numero entero ");
+                MessageBox.Show("El campo \"Inscripción Id\" debe ser un numero entero ");
                 InscripcionIdTextBox.Focus();
                 return;
             }
@@ -129,7 +129,7 @@ namespace Registro.UI.Registros {
 
             } catch (Exception) {
 
-                MessageBox.Show("El campo \"Inscripcion Id\" debe un ser numero entero.");
+                MessageBox.Show("El campo \"Inscripción Id\" debe un ser numero entero.");
                 InscripcionIdTextBox.Focus();
                 return;
             }
@@ -209,7 +209,7 @@ namespace Registro.UI.Registros {
                 monto = Convert.ToDecimal(MontoTextBox.Text);
 
                 if (monto <= 0.0m) {
-                    MessageBox.Show("El Monto no puede estar vacio");
+                    MessageBox.Show("El Monto no puede estar vacío");
                     MontoTextBox.Focus();
                     validados = false;
                 }

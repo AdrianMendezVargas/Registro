@@ -17,8 +17,8 @@
             <ComboBoxItem Content="Todo"/>
             <ComboBoxItem Content="ID"/>
             <ComboBoxItem Content="Nombre"/>
-            <ComboBoxItem Content="Cedula"/>
-            <ComboBoxItem Content="Direccion"/>
+            <ComboBoxItem Content="Cédula"/>
+            <ComboBoxItem Content="Dirección"/>
 
         </ComboBox>
         <Label Content="Criterio" HorizontalAlignment="Left" Margin="365,2,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>

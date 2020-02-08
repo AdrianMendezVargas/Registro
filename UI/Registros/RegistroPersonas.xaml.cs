@@ -189,22 +189,22 @@ namespace Registro.UI.Registros {
             }
 
             if (string.IsNullOrWhiteSpace(tbNombre.Text)) {
-                MessageBox.Show("El Nombre no puede estar vacio");
+                MessageBox.Show("El Nombre no puede estar vacío");
                 tbNombre.Focus();
                 validados = false;
             }
             if (string.IsNullOrWhiteSpace(tbCedula.Text)) {
-                MessageBox.Show("La cedula no puede estar vacia");
+                MessageBox.Show("La cédula no puede estar vacía");
                 tbCedula.Focus();
                 validados = false;
             }
             if (string.IsNullOrWhiteSpace(tbTelefono.Text)) {
-                MessageBox.Show("El Telefono no puede estar vacio");
+                MessageBox.Show("El Teléfono no puede estar vacía");
                 tbTelefono.Focus();
                 validados = false;
             }
             if (string.IsNullOrWhiteSpace(tbDireccion.Text)) {
-                MessageBox.Show("La direccion no puede estar vacia");
+                MessageBox.Show("La dirección no puede estar vacía");
                 tbDireccion.Focus();
                 validados = false;
             }
