@@ -12,7 +12,7 @@ namespace Registro.DAL {
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 
-            optionsBuilder.UseSqlServer(@"Server = .\SqlExpress; Database = PersonasDb; Trusted_Connection = True; ");
+            optionsBuilder.UseSqlServer(@"Server = .\SqlExpress; Database = RegistroDb; Trusted_Connection = True; ");
 
         }
     }

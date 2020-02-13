@@ -1,6 +1,6 @@
-create database PersonasDb
+create database RegistroDb
 go
-use PersonasDb
+use RegistroDb
 go
 create table Personas
 (
