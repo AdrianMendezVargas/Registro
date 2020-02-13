@@ -10,9 +10,9 @@
 
         <Label x:Name="lbID" Content="ID" HorizontalAlignment="Left" Margin="90,54,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lbNombre" Content="Nombre" HorizontalAlignment="Left" Margin="33,117,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="White"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="31,148,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="lbTelefono" Content="Cedula" HorizontalAlignment="Left" Margin="31,179,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="lbDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="31,210,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="31,148,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lbTelefono" Content="Cédula" HorizontalAlignment="Left" Margin="31,179,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="lbDireccion" Content="Dirección" HorizontalAlignment="Left" Margin="31,210,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lbFechaNacimiento" Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="31,272,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
 
         <Button x:Name="btnNuevo" Click="btnNuevo_Click" HorizontalAlignment="Left" Margin="52,337,0,0" VerticalAlignment="Top" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}">

@@ -21,6 +21,9 @@
                     <MenuItem x:Name="ConsultaPersonasMenuItem" Header="_Personas" Click="ConsultaPersonasMenuItem_Click"/>
                     <MenuItem x:Name="ConsultaInscripcionesMenuItem" Header="_Inscripciones" Click="ConsultaInscripcionesMenuItem_Click"/>
                 </MenuItem>
+                <MenuItem Header="_Herramientas">
+                    <MenuItem x:Name="HerramientasBaseDatosMenuItem" Header="_Base de datos" Click="HerramientasBaseDatosMenuItem_Click"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
 

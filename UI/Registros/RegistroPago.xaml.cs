@@ -28,14 +28,22 @@ namespace Registro.UI.Registros {
         private void GuardarButton_Click(object sender , RoutedEventArgs e) {
 
             bool guardado = false;
+            int inscripcionId;
+            decimal monto;
 
             if (!Validar()) {
                 return;
             }
 
-            int inscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
-            decimal monto = Convert.ToDecimal(MontoPagarTextBox.Text);
+            //todo: encerrar en try catch
+            try {
+                inscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
+                monto = Convert.ToDecimal(MontoPagarTextBox.Text);
 
+            } catch (Exception) {
+
+                throw;
+            }
             Inscripcion inscripcion = InscripcionesBLL.Buscar(inscripcionId);
             inscripcion.Balance -= monto;
 

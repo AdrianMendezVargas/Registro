@@ -5,122 +5,123 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Registro.BLL {
-    public class InscripcionesBLL {
+	public class InscripcionesBLL {
 
-        public static bool Guardar(Inscripcion inscripcion) {
+		public static bool Guardar(Inscripcion inscripcion) {
 
-            bool guardado = false;
-            Contexto db = new Contexto();
+			bool guardado = false;
+			Contexto db = new Contexto();
 
 			try {
 
-                if (db.Add(inscripcion) != null) {
-                    guardado = (db.SaveChanges() > 0);
-                }
+				if (db.Add(inscripcion) != null) {
+					guardado = (db.SaveChanges() > 0);
+				}
 
 			} catch (Exception) {
 
 				throw;
 
-            } finally {
-                db.Dispose();
-            }
+			} finally {
+				db.Dispose();
+			}
 
-            return guardado;
+			return guardado;
 
-        }
+		}
 
-        public static bool Modificar(Inscripcion inscripcion) {
+		public static bool Modificar(Inscripcion inscripcion) {
 
-            bool modificado = false;
-            Contexto db = new Contexto();
+			bool modificado = false;
+			Contexto db = new Contexto();
 
-            try {
+			try {
 
-                db.Entry(inscripcion).State = EntityState.Modified;
-                modificado = (db.SaveChanges() > 0);
+				db.Entry(inscripcion).State = EntityState.Modified;
+				modificado = (db.SaveChanges() > 0);
 
-            } catch (Exception) {
+			} catch (Exception) {
 
-                throw;
+				throw;
 
-            } finally {
+			} finally {
 
-                db.Dispose();
-            }
+				db.Dispose();
+			}
 
-            return modificado;
+			return modificado;
 
-        }
+		}
 
-        public static void Eliminar(int id) {
+		public static bool Eliminar(int id) {
 
-            bool eliminado = false;
-            Contexto db = new Contexto();
+			bool eliminado = false;
+			Contexto db = new Contexto();
 
-            try {
+			try {
 
-                var inscripcionEliminada = db.Inscripciones.Find(id);
-                db.Entry(inscripcionEliminada).State = EntityState.Deleted;
+				var inscripcionEliminada = db.Inscripciones.Find(id);
+				db.Entry(inscripcionEliminada).State = EntityState.Deleted;
 
-                eliminado = (db.SaveChanges() > 0);
+				eliminado = (db.SaveChanges() > 0);
 
-            } catch (Exception) {
+			} catch (Exception) {
 
-                throw;
+				throw;
 
-            } finally {
+			} finally {
 
-                db.Dispose();
-            }
+				db.Dispose();
+			}
 
-        }
+			return eliminado;
 
-        public static Inscripcion Buscar(int id) {
+		}
 
-            Inscripcion inscripcion = new Inscripcion();
-            Contexto db = new Contexto();
+		public static Inscripcion Buscar(int id) {
 
-            try {
+			Inscripcion inscripcion = new Inscripcion();
+			Contexto db = new Contexto();
 
-                inscripcion = db.Inscripciones.Find(id);
+			try {
 
-            } catch (Exception) {
+				inscripcion = db.Inscripciones.Find(id);
 
-                throw;
+			} catch (Exception) {
 
-            } finally {
+				throw;
 
-                db.Dispose();
-            }
+			} finally {
 
-            return inscripcion;
-        }
+				db.Dispose();
+			}
 
-        public static List<Inscripcion> GetList(Expression<Func<Inscripcion, bool>> expression) {
+			return inscripcion;
+		}
 
-            List<Inscripcion> inscripcionesList = new List<Inscripcion>();
-            Contexto db = new Contexto();
+		public static List<Inscripcion> GetList(Expression<Func<Inscripcion, bool>> expression) {
 
-            try {
+			List<Inscripcion> inscripcionesList = new List<Inscripcion>();
+			Contexto db = new Contexto();
 
-                inscripcionesList = db.Inscripciones.Where(expression).ToList();
-                                                                               
-            } catch (Exception) {
+			try {
 
-                throw;
+				inscripcionesList = db.Inscripciones.Where(expression).ToList();
+																			   
+			} catch (Exception) {
 
-            } finally {
+				throw;
 
-                db.Dispose();
-            }
+			} finally {
 
-            return inscripcionesList;
+				db.Dispose();
+			}
 
-        }
+			return inscripcionesList;
 
-    }
+		}
+
+	}
 }

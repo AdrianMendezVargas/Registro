@@ -49,11 +49,11 @@ namespace Registro.UI.Consultas {
                         listado = PersonasBLL.GetList(p => p.Nombre.Contains(CriterioTextBox.Text));
                         break;
 
-                    case 3://Cedula
+                    case 3://Cédula
                         listado = PersonasBLL.GetList(p => p.Cedula.Contains(CriterioTextBox.Text));
                         break;
 
-                    case 4://Direccion
+                    case 4://Dirección
                         listado = PersonasBLL.GetList(p => p.Direccion.Contains(CriterioTextBox.Text));
                         break;
                 }

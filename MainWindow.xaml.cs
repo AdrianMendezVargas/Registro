@@ -1,6 +1,7 @@
 ﻿using Registro.BLL;
 using Registro.Entidades;
 using Registro.UI.Consultas;
+using Registro.UI.Herramientas;
 using Registro.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -62,6 +63,12 @@ namespace Registro {
             registroPago.Owner = this;
             registroPago.ShowDialog();
 
+        }
+
+        private void HerramientasBaseDatosMenuItem_Click(object sender , RoutedEventArgs e) {
+            HerramientasBaseDatos herramientasBaseDatos = new HerramientasBaseDatos();
+            herramientasBaseDatos.Owner = this;
+            herramientasBaseDatos.ShowDialog();
         }
     }
 }

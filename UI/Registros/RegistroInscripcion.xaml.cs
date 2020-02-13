@@ -62,26 +62,9 @@ namespace Registro.UI.Registros {
 
             if (guardado) {
 
-                Persona persona = PersonasBLL.Buscar(personaId);
-
-                decimal balance = 0;
-
-                List<Inscripcion> inscripcionesList = new List<Inscripcion>();
-
-                inscripcionesList = InscripcionesBLL.GetList(i => i.PersonaId == personaId);
-
-                foreach (Inscripcion i in inscripcionesList) {
-                    balance += i.Balance;
-                }
-
-                persona.Balance = balance;
-
-                bool personaModificada = PersonasBLL.Modificar(persona);
-     
-
-                MessageBox.Show("Guardado :)" , "EXITO" , MessageBoxButton.OK , MessageBoxImage.Exclamation);
+                MessageBox.Show("Guardado." , "EXITO" , MessageBoxButton.OK , MessageBoxImage.Exclamation);
             } else {
-                MessageBox.Show("No se ah Guardado :(" , "ERROR" , MessageBoxButton.OK , MessageBoxImage.Error);
+                MessageBox.Show("Error al guardar" , "ERROR" , MessageBoxButton.OK , MessageBoxImage.Error);
             }
 
 

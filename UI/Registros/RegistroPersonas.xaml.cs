@@ -30,7 +30,7 @@ namespace Registro.UI.Registros {
         private void btnGuardar_Click(object sender , RoutedEventArgs e) {
 
             Persona persona;
-            bool guardado = true;
+            bool guardado = false;
 
             if (!Validar()) {
                 return;
@@ -58,11 +58,6 @@ namespace Registro.UI.Registros {
             } else {
                 MessageBox.Show("No se ah Guardado :(" , "ERROR" , MessageBoxButton.OK , MessageBoxImage.Error);
             }
-
-
-
-
-
 
         }
 
