@@ -1,16 +1,7 @@
 ﻿using Registro.BLL;
 using Registro.Entidades;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Registro.UI.Registros {
     /// <summary>
@@ -82,12 +73,12 @@ namespace Registro.UI.Registros {
 
             if (persona != null) {
 
-                MessageBoxResult messageBoxResult = MessageBox.Show("Desea eliminar esta persona?" , "Atención" , MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Desea eliminar esta persona?" , "Atención" , MessageBoxButton.YesNo , MessageBoxImage.Question);
                 if (messageBoxResult == MessageBoxResult.Yes) {
                     PersonasBLL.Eliminar(id);
                     MessageBox.Show("Persona Eliminada.");
                 }
-                
+
             } else {
                 MessageBox.Show("Esta Persona no existe");
             }
@@ -157,7 +148,7 @@ namespace Registro.UI.Registros {
             tbNombre.Text = persona.Nombre;
             tbCedula.Text = persona.Cedula;
             tbTelefono.Text = persona.Telefono;
-            tbDireccion.Text = persona.Direccion; 
+            tbDireccion.Text = persona.Direccion;
             tbBalance.Text = persona.Balance.ToString();
             dpFechaNacimiento.SelectedDate = persona.FechaNacimiento;
 

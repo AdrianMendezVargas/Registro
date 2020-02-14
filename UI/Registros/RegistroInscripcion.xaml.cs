@@ -1,16 +1,7 @@
 ﻿using Registro.BLL;
 using Registro.Entidades;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Registro.UI.Registros {
     /// <summary>
@@ -38,7 +29,7 @@ namespace Registro.UI.Registros {
 
             int personaId;
 
-            int.TryParse(PersonaIdTextBox.Text , out personaId); 
+            int.TryParse(PersonaIdTextBox.Text , out personaId);
 
             inscripcion = LlenaClase();
 
@@ -70,7 +61,7 @@ namespace Registro.UI.Registros {
 
         }
 
-        
+
 
         private void btnEliminar_Click(object sender , RoutedEventArgs e) {
 
@@ -92,12 +83,12 @@ namespace Registro.UI.Registros {
 
             if (inscripcion != null) {
 
-                MessageBoxResult messageBoxResult = MessageBox.Show("Desea eliminar esta persona?" , "Atención" , MessageBoxButton.YesNo , MessageBoxImage.Question);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Desea eliminar esta Inscripción?" , "Atención" , MessageBoxButton.YesNo , MessageBoxImage.Question);
                 if (messageBoxResult == MessageBoxResult.Yes) {
                     InscripcionesBLL.Eliminar(InscripcionId);
                     MessageBox.Show("Inscripción eliminada.");
                 }
-                
+
             } else {
                 MessageBox.Show("Esta inscripción no existe");
             }
@@ -107,13 +98,13 @@ namespace Registro.UI.Registros {
         private void btnBuscar_Click(object sender , RoutedEventArgs e) {
 
             int InscripcionId;
-            
+
             Inscripcion inscripcion;
 
             try {
 
                 InscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
-               
+
 
             } catch (Exception) {
 
@@ -169,7 +160,7 @@ namespace Registro.UI.Registros {
             }
 
             try {    //PersonaId
-                
+
                 PersonaId = Convert.ToInt32(PersonaIdTextBox.Text);
 
                 if (PersonaId <= 0) {
@@ -228,12 +219,12 @@ namespace Registro.UI.Registros {
             inscripcion.PersonaId = Convert.ToInt32(PersonaIdTextBox.Text);
             inscripcion.Monto = Convert.ToDecimal(MontoTextBox.Text);
             inscripcion.Comentario = ComentarioTextBox.Text;
-            inscripcion.Fecha = (DateTime)FechaInscripcionDatepicker.SelectedDate;
+            inscripcion.Fecha = (DateTime) FechaInscripcionDatepicker.SelectedDate;
             inscripcion.Balance = inscripcion.Monto;
 
             return inscripcion;
         }
-        
+
         private bool ExisteEnBaseDatos() {
             Inscripcion inscripcion = InscripcionesBLL.Buscar(Convert.ToInt32(InscripcionIdTextBox.Text));
             return (inscripcion != null);
