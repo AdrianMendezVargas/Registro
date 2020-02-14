@@ -10,6 +10,24 @@ using Registro.Entidades;
 namespace Registro.BLL {
 	public class PersonasBLL {
 
+		public static void ActualizarBalance(int personaId) {
+
+			decimal nuevoBalance = 0.0m;
+
+			Persona persona = Buscar(personaId);
+
+			List<Inscripcion> inscripcionesList = InscripcionesBLL.GetList(i => i.PersonaId == personaId);
+
+			foreach (Inscripcion i in inscripcionesList) {
+				nuevoBalance += i.Balance;
+			}
+
+			persona.Balance = nuevoBalance;
+
+			Modificar(persona);
+
+		}
+
 		public static bool Guardar(Persona persona) {
 
 			bool guardado = false;
@@ -27,7 +45,7 @@ namespace Registro.BLL {
 
 			} finally {
 
-				db.Dispose();//Esta funcion cierra la conexion con la base de datos
+				db.Dispose();//Esta función cierra la conexión con la base de datos
 				
 			}
 
