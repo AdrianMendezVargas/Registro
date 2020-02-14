@@ -224,7 +224,7 @@ namespace Registro.UI.Registros {
             inscripcion.Monto = Convert.ToDecimal(MontoTextBox.Text);
             inscripcion.Comentario = ComentarioTextBox.Text;
             inscripcion.Fecha = (DateTime)FechaInscripcionDatepicker.SelectedDate;
-            inscripcion.Balance = inscripcion.Monto;//todo: Revisar esta sentencia
+            inscripcion.Balance = inscripcion.Monto;
 
             return inscripcion;
         }

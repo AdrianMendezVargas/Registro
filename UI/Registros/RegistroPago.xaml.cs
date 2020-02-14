@@ -50,8 +50,6 @@ namespace Registro.UI.Registros {
             guardado = InscripcionesBLL.Modificar(inscripcion);
 
             if (guardado) {
-                PersonasBLL.ActualizarBalance(inscripcion.PersonaId);
-
                 MessageBox.Show("Pago Realizado.");
             } else {
                 MessageBox.Show("Error al pagar.");

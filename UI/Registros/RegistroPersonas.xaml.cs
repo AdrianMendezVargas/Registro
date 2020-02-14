@@ -152,17 +152,10 @@ namespace Registro.UI.Registros {
             tbNombre.Text = persona.Nombre;
             tbCedula.Text = persona.Cedula;
             tbTelefono.Text = persona.Telefono;
-            tbDireccion.Text = persona.Direccion;
-            //ToDo: Verificar campo Balance 
+            tbDireccion.Text = persona.Direccion; 
             tbBalance.Text = persona.Balance.ToString();
             dpFechaNacimiento.SelectedDate = persona.FechaNacimiento;
 
-        }
-        private decimal CalcularBalancePersona(int id) {
-            decimal balance = 0.0m;
-
-
-            return balance;
         }
 
         private bool Validar() {
