@@ -47,12 +47,15 @@ namespace Registro.UI.Registros {
             Inscripcion inscripcion = InscripcionesBLL.Buscar(inscripcionId);
             inscripcion.Balance -= monto;
 
-            guardado = InscripcionesBLL.Modificar(inscripcion);
+            MessageBoxResult messageBoxResult = MessageBox.Show("Desea realizar este pago?" , "Atención" , MessageBoxButton.YesNo , MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes) {
+                guardado = InscripcionesBLL.Modificar(inscripcion);
+            }
 
             if (guardado) {
-                MessageBox.Show("Pago Realizado.");
+                MessageBox.Show("Pago realizado.");
             } else {
-                MessageBox.Show("Error al pagar.");
+                MessageBox.Show("Pago no realizado.");
             }
 
 
@@ -66,7 +69,7 @@ namespace Registro.UI.Registros {
 
             Inscripcion inscripcion; 
 
-            try { //es Numero?
+            try { //Inscripción Id
 
                inscripcionId = Convert.ToInt32(InscripcionIdTextBox.Text);
 
@@ -77,9 +80,9 @@ namespace Registro.UI.Registros {
                 validados = false;
             }
 
-            try { //es Numero?
+            try { //Mondo
 
-                decimal monto = Convert.ToInt32(InscripcionIdTextBox.Text);
+                decimal monto = Convert.ToInt32(MontoPagarTextBox.Text);
 
             } catch (Exception) {
 
