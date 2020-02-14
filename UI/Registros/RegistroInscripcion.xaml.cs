@@ -91,8 +91,13 @@ namespace Registro.UI.Registros {
             inscripcion = InscripcionesBLL.Buscar(InscripcionId);
 
             if (inscripcion != null) {
-                InscripcionesBLL.Eliminar(InscripcionId);
-                MessageBox.Show("Inscripción eliminada.");
+
+                MessageBoxResult messageBoxResult = MessageBox.Show("Desea eliminar esta persona?" , "Atención" , MessageBoxButton.YesNo , MessageBoxImage.Question);
+                if (messageBoxResult == MessageBoxResult.Yes) {
+                    InscripcionesBLL.Eliminar(InscripcionId);
+                    MessageBox.Show("Inscripción eliminada.");
+                }
+                
             } else {
                 MessageBox.Show("Esta inscripción no existe");
             }

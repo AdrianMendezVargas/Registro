@@ -81,8 +81,13 @@ namespace Registro.UI.Registros {
             persona = PersonasBLL.Buscar(id);
 
             if (persona != null) {
-                PersonasBLL.Eliminar(id);
-                MessageBox.Show("Persona Eliminada");
+
+                MessageBoxResult messageBoxResult = MessageBox.Show("Desea eliminar esta persona?" , "Atención" , MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (messageBoxResult == MessageBoxResult.Yes) {
+                    PersonasBLL.Eliminar(id);
+                    MessageBox.Show("Persona Eliminada.");
+                }
+                
             } else {
                 MessageBox.Show("Esta Persona no existe");
             }

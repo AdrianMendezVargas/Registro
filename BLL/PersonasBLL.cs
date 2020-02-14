@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Registro.DAL;
+using Registro.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using Registro.DAL;
-using Registro.Entidades;
 
 namespace Registro.BLL {
 	public class PersonasBLL {
@@ -35,7 +34,7 @@ namespace Registro.BLL {
 
 			try {
 
-				if(db.Add(persona) != null) {
+				if (db.Add(persona) != null) {
 					guardado = (db.SaveChanges() > 0);
 				}
 
@@ -46,7 +45,7 @@ namespace Registro.BLL {
 			} finally {
 
 				db.Dispose();//Esta función cierra la conexión con la base de datos
-				
+
 			}
 
 			return guardado;
@@ -66,7 +65,7 @@ namespace Registro.BLL {
 			} catch (Exception) {
 
 				throw;
-				
+
 			} finally {
 
 				db.Dispose();
@@ -126,7 +125,7 @@ namespace Registro.BLL {
 
 		}
 
-		public static List<Persona> GetList(Expression<Func<Persona, bool>> persona) {
+		public static List<Persona> GetList(Expression<Func<Persona , bool>> persona) {
 
 			List<Persona> personasList = new List<Persona>();
 			Contexto db = new Contexto();
