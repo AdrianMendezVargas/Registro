@@ -28,6 +28,10 @@ namespace Registro.BLL {
 				db.Dispose();
 			}
 
+			if (guardado) {
+				PersonasBLL.ActualizarBalance(inscripcion.PersonaId);
+			}
+
 			return guardado;
 
 		}
@@ -51,6 +55,10 @@ namespace Registro.BLL {
 				db.Dispose();
 			}
 
+			if (modificado) {
+				PersonasBLL.ActualizarBalance(inscripcion.PersonaId);
+			}
+
 			return modificado;
 
 		}
@@ -60,9 +68,11 @@ namespace Registro.BLL {
 			bool eliminado = false;
 			Contexto db = new Contexto();
 
+			Inscripcion inscripcionEliminada = new Inscripcion(); 
+
 			try {
 
-				var inscripcionEliminada = db.Inscripciones.Find(id);
+				inscripcionEliminada = db.Inscripciones.Find(id);
 				db.Entry(inscripcionEliminada).State = EntityState.Deleted;
 
 				eliminado = (db.SaveChanges() > 0);
@@ -74,6 +84,10 @@ namespace Registro.BLL {
 			} finally {
 
 				db.Dispose();
+			}
+
+			if (eliminado) {
+				PersonasBLL.ActualizarBalance(inscripcionEliminada.PersonaId);
 			}
 
 			return eliminado;
